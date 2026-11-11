@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Az Zamir Humaid A.M — Portofolio</title>
+  <meta name="description" content="Portofolio Az Zamir Humaid A.M, mahasiswa IMT-FSD Universitas Ciputra: profil, arah karier, karya, dan pencapaian.">
+  <meta name="theme-color" content="#2B3BE8">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%232B3BE8'/%3E%3Ctext x='32' y='42' font-size='28' text-anchor='middle' fill='%23FFD54A' font-family='serif'%3EAZ%3C/text%3E%3C/svg%3E">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600..800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#konten">Lewati ke konten</a>
+  <header class="nav" id="nav">
+    <a class="nav__brand" href="#beranda" aria-label="Kembali ke beranda" data-bind="monogram">AZ</a>
+    <button class="nav__toggle" id="navToggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Buka menu">
+      <span></span>
+    </button>
+    <nav class="nav__menu" id="menu" aria-label="Navigasi utama">
+      <a href="#tentang">Tentang</a>
+      <a href="#karier">Arah Karier</a>
+      <a href="#keahlian">Keahlian</a>
+      <a href="#karya">Karya</a>
+      <a href="#pencapaian">Pencapaian</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+  </header>
+
+  <main id="konten">
+    <section class="hero" id="beranda" aria-labelledby="heroName">
+      <div class="hero__bg" aria-hidden="true"></div>
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="hero__eyebrow" data-bind="role"></p>
+          <h1 class="hero__name" id="heroName" data-bind="name">Az Zamir Humaid A.M</h1>
+          <p class="hero__goal" data-bind="goal"></p>
+          <p class="hero__tagline" data-bind="tagline"></p>
+          <div class="hero__actions">
+            <a class="btn btn--gold" href="#pencapaian">Lihat pencapaian</a>
+            <a class="btn btn--line" href="#tentang">Kenali saya</a>
+          </div>
+        </div>
+
+        <div class="hero__visual">
+          <div class="crest">
+            <span class="crest__mono" data-bind="monogram">AZ</span>
+            <img class="crest__photo" id="heroPhoto" alt="" hidden>
+          </div>
+        </div>
+      </div>
+      <a class="hero__scroll" href="#tentang" aria-label="Gulir ke bawah"><span></span></a>
+    </section>
+    <section class="section" id="tentang" aria-labelledby="h-tentang">
+      <div class="wrap">
+        <header class="chapter">
+          <h2 id="h-tentang">Tentang</h2>
+        </header>
+        <div class="about">
+          <div class="about__text prose" id="aboutText"></div>
+          <aside class="frame about__aside" aria-labelledby="h-pursuit">
+            <h3 id="h-pursuit">Yang saya kejar</h3>
+            <ul class="diamond-list" id="pursuits"></ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+    <section class="section section--alt" id="karier" aria-labelledby="h-karier">
+      <div class="wrap">
+        <header class="chapter">
+          <h2 id="h-karier">Arah Karier</h2>
+        </header>
+        <ol class="timeline" id="timeline"></ol>
+      </div>
+    </section>
+    <section class="section" id="keahlian" aria-labelledby="h-keahlian">
+      <div class="wrap">
+        <header class="chapter">
+          <h2 id="h-keahlian">Keahlian</h2>
+        </header>
+        <div class="skills" id="skills"></div>
+      </div>
+    </section>
+    <section class="section section--alt" id="karya" aria-labelledby="h-karya">
+      <div class="wrap">
+        <header class="chapter">
+          <h2 id="h-karya">Karya</h2>
+        </header>
+        <div class="projects" id="projects"></div>
+      </div>
+    </section>
+    <section class="section" id="pencapaian" aria-labelledby="h-pencapaian">
+      <div class="wrap">
+        <header class="chapter">
+          <h2 id="h-pencapaian">Pencapaian</h2>
+        </header>
+
+        <div class="owner-bar" id="ownerBar" hidden>
+          <p><strong>Mode pengelola aktif.</strong> <span data-sync class="sync"></span></p>
+          <div class="owner-bar__actions">
+            <button class="btn btn--small btn--oxblood" type="button" id="ownerAdd">Tambah pencapaian</button>
+            <button class="btn btn--small btn--outline" type="button" id="ownerLogout">Keluar</button>
+          </div>
+        </div>
+
+        <div class="filters" id="filters" role="group" aria-label="Filter kategori" hidden></div>
+        <div class="gallery" id="gallery"></div>
+
+        <div class="empty frame" id="galleryEmpty" hidden>
+          <svg viewBox="0 0 64 64" width="64" height="64" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true">
+            <rect x="8" y="10" width="48" height="44" />
+            <rect x="14" y="16" width="36" height="32" />
+            <path d="M14 42l10-11 8 8 6-6 12 13" />
+            <circle cx="41" cy="26" r="3" />
+          </svg>
+          <p>Pencapaian akan ditampilkan di sini.</p>
+          <button class="btn btn--small btn--oxblood" type="button" id="emptyAdd" hidden>Tambah pencapaian pertama</button>
+        </div>
+      </div>
+    </section>
+    <section class="section section--alt" id="kontak" aria-labelledby="h-kontak">
+      <div class="wrap">
+        <header class="chapter">
+          <h2 id="h-kontak">Kontak</h2>
+        </header>
+        <p class="lead">Terbuka untuk kesempatan magang, kolaborasi, dan diskusi tentang pemasaran atau usaha.</p>
+        <ul class="contact" id="contactList"></ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span class="ornament ornament--light" aria-hidden="true"></span>
+    <p><span data-bind="name"></span>, <span id="year"></span></p>
+    <button class="footer__admin" type="button" id="openAdmin">Kelola pencapaian</button>
+  </footer>
+
+  <!-- ===== Dialog: detail pencapaian ===== -->
+  <dialog class="dlg" id="detailDialog" aria-labelledby="detailTitle">
+    <div class="sheet">
+      <button class="dlg__close" type="button" data-close aria-label="Tutup">&times;</button>
+      <div class="detail">
+        <div class="detail__media" id="detailMedia"></div>
+        <div class="detail__body">
+          <p class="detail__meta" id="detailMeta"></p>
+          <h3 id="detailTitle"></h3>
+          <p class="detail__desc" id="detailDesc"></p>
+          <a class="btn btn--small btn--oxblood" id="detailLink" target="_blank" rel="noopener noreferrer" hidden>Buka tautan</a>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ===== Dialog: panel pengelola ===== -->
+  <dialog class="dlg dlg--admin" id="adminDialog" aria-labelledby="adminTitle">
+    <div class="sheet">
+      <button class="dlg__close" type="button" data-close aria-label="Tutup">&times;</button>
+
+      <!-- Masuk -->
+      <div id="adminLogin">
+        <h3 id="adminTitle">Kelola pencapaian</h3>
+        <p class="muted">Masukkan password pengelola untuk menambah atau mengubah pencapaian.</p>
+        <form id="loginForm" class="form" autocomplete="off">
+          <label class="field">
+            <span>Password</span>
+            <input type="password" name="password" required autocomplete="current-password">
+          </label>
+          <p class="form__error" id="loginError" role="alert" hidden>Password tidak cocok. Periksa lagi, lalu coba kembali.</p>
+          <button class="btn btn--oxblood" type="submit">Masuk</button>
+        </form>
+      </div>
+
+      <!-- Kelola -->
+      <div id="adminManage" hidden>
+        <h3>Kelola pencapaian</h3>
+        <p class="sync-line"><span data-sync class="sync"></span></p>
+
+        <form id="achForm" class="form form--grid">
+          <label class="field field--wide">
+            <span>Judul pencapaian</span>
+            <input type="text" name="title" maxlength="120" required placeholder="Contoh: Juara 2 Lomba Business Plan">
+          </label>
+          <label class="field">
+            <span>Kategori</span>
+            <select name="category" id="categorySelect"></select>
+          </label>
+          <label class="field">
+            <span>Bulan dan tahun</span>
+            <input type="month" name="date" required>
+          </label>
+          <label class="field field--wide">
+            <span>Penyelenggara atau institusi</span>
+            <input type="text" name="issuer" maxlength="120" placeholder="Contoh: Universitas Ciputra">
+          </label>
+          <label class="field field--wide">
+            <span>Deskripsi singkat</span>
+            <textarea name="description" rows="3" maxlength="600" placeholder="Ceritakan apa yang Anda capai dan perannya."></textarea>
+          </label>
+          <label class="field field--wide">
+            <span>Tautan sertifikat atau berita (opsional)</span>
+            <input type="url" name="link" placeholder="https://">
+          </label>
+          <div class="field field--wide">
+            <span id="photoLabel">Foto atau sertifikat (JPG, PNG, atau WebP)</span>
+            <input type="file" name="image" id="imageInput" accept="image/*" aria-labelledby="photoLabel">
+            <div class="preview" id="preview" hidden>
+              <img id="previewImg" alt="Pratinjau foto">
+              <label class="check" id="removeImageWrap" hidden>
+                <input type="checkbox" id="removeImage"> Hapus foto saat ini
+              </label>
+            </div>
+            <small class="muted">Foto diperkecil otomatis agar ringan dimuat.</small>
+          </div>
+          <div class="form__actions field--wide">
+            <button class="btn btn--oxblood" type="submit" id="saveBtn">Tambahkan pencapaian</button>
+            <button class="btn btn--outline" type="button" id="cancelEdit" hidden>Batal ubah</button>
+          </div>
+        </form>
+        <h4 class="admin__sub">Daftar pencapaian <span id="adminCount"></span></h4>
+        <ul class="admin-list" id="adminList"></ul>
+        <div class="admin__tools">
+          <h4 class="admin__sub">Cadangan dan pindah perangkat</h4>
+          <p class="muted">Ekspor menghasilkan satu berkas cadangan. Impor menggabungkannya ke perangkat ini, tanpa menghapus yang sudah ada.</p>
+          <div class="form__actions">
+            <button class="btn btn--small btn--outline" type="button" id="exportBtn">Ekspor cadangan</button>
+            <button class="btn btn--small btn--outline" type="button" id="importBtn">Impor cadangan</button>
+            <button class="btn btn--small btn--outline" type="button" id="syncBtn">Muat ulang dari cloud</button>
+            <input type="file" id="importInput" accept="application/json,.json" hidden>
+          </div>
+        </div>
+        <div class="form__actions admin__logout">
+          <button class="btn btn--small btn--outline" type="button" id="adminLogout">Keluar dari mode pengelola</button>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+  <script src="effects.js"></script>
+</body>
+</html>
